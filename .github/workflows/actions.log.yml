@@ -34,7 +34,7 @@ jobs:
             fs.writeFileSync("github-actions.log", firstMessage)
             core.notice("Created actions.log.js and github-actions.log")
           }
-          var logAction = require("./tools.js")
+          var logAction = require("./actions.log.js")
           logAction("${{ github.event.inputs.message }}", ${{ github.event.inputs.logLevel }}, "CONSOLE")
           core.notice("${{ github.event.inputs.message }}")
     - name: push changes
@@ -42,5 +42,5 @@ jobs:
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add .
-        git commit -m "logged message init by gh-actions-log"
+        git commit -m "logged message init by actions.log.yml"
         git push
