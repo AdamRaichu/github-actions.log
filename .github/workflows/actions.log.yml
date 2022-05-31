@@ -1,4 +1,4 @@
-name: Log to github-actions.log
+name: Log to github-actions.log # The name of the workflow. You can call this whatever you want.
 on:
   workflow_dispatch:
     inputs:
@@ -16,9 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
+#    - uses: actions/setup-node@v3
+#      with:
+#        node-version: 16
     - name: log based on inputs
       uses: actions/github-script@v6
       with:
